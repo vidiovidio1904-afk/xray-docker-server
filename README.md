@@ -1,42 +1,23 @@
 # Xray Docker Server
 
-Docker deployment of Xray proxy server on Ubuntu VPS.
-
-## Technologies
-
-- Linux Ubuntu
-- Docker
-- Xray-core
-- VPS/VDS
-- Networking
+Docker deployment of Xray-core VPN server.
 
 ## Features
 
-- Containerized deployment
+- Docker Compose deployment
 - Host networking
 - Automatic restart
-- Lightweight infrastructure
+- External configuration support
+- Xray-core based
 
-## Docker Compose
+## Stack
 
-```yaml
-version: '3'
+- Linux
+- Docker
+- Docker Compose
+- Xray
 
-services:
-  xray:
-    image: teddysun/xray:latest
-    network_mode: host
-    cap_add:
-      - NET_ADMIN
-    volumes:
-      - /usr/local/etc/xray/config.json:/etc/xray/config.json:ro
-    restart: unless-stopped
-```
+## Start
 
-## Skills Demonstrated
-
-- Linux Administration
-- Docker Management
-- Network Services
-- VPS Deployment
-- Infrastructure Management
+```bash
+docker compose up -d
